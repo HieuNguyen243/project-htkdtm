@@ -2,10 +2,10 @@
 
 ## 1. Thông Tin Chung
 
-- **Tên nhóm:** [Điền tên nhóm theo định dạng: tennhom-tenlop, ví dụ: nhom01-dhti15a1hn]
-- **Tên lớp học phần:** [Điền mã hoặc tên lớp học phần]
-- **Tên đề tài:** [Điền tên đề tài đồ án / bài tập lớn]
-- **Giảng viên hướng dẫn:** [Điền tên giảng viên]
+- **Tên nhóm:** nhom11-65httt
+- **Tên lớp học phần:** Hệ thống kinh doanh thông minh
+- **Tên đề tài:** He thong phan tich thi truong phong tro
+- **Giảng viên hướng dẫn:** Ths. Dỗ Oanh Cường
 
 ---
 
@@ -13,10 +13,10 @@
 
 | STT | Họ và Tên | Mã Sinh Viên | Lớp Sinh Hoạt | Vai Trò | Nhiệm Vụ Phân Công | Tỷ Lệ Đóng Góp (%) | Email |
 | :-: | :--- | :-: | :-: | :--- | :--- | :-: | :--- |
-| 1 | [Nguyễn Văn A] | [20210001] | [DHTI15A1HN] | Nhóm trưởng | Thiết kế kiến trúc, phát triển Backend API | 100% | a@student.edu.vn |
-| 2 | [Trần Thị B] | [20210002] | [DHTI15A1HN] | Thành viên | Thiết kế giao diện Frontend, tích hợp API | 100% | b@student.edu.vn |
-| 3 | [Lê Văn C] | [20210003] | [DHTI15A1HN] | Thành viên | Thiết kế cơ sở dữ liệu, kiểm thử phần mềm | 100% | c@student.edu.vn |
-
+| 1 | [Nguyễn Ngọc Hiếu] | [2351160519] | [65HTTT] | Nhóm trưởng | Thiết kế kiến trúc, phát triển Backend API | 100% | 2351160519@e.tlu.edu.vn |
+| 2 | [Hoàng Phương Thảo] | [2351160553] | [65HTTT] | Thành viên | Thiết kế giao diện Frontend, tích hợp API | 100% | 2351160553@e.tlu.edu.vn |
+| 3 | [Trần Thị Minh Thư] | [2351160556] | [65HTTT] | Thành viên | Thiết kế cơ sở dữ liệu, kiểm thử phần mềm | 100% | 2351160556@e.tlu.edu.vn |
+| 3 | [Trịnh Khắc Hưng] | [2351160519] | [65HTTT] | Thành viên | Thiết kế cơ sở dữ liệu, kiểm thử phần mềm | 100% | 2351160519@e.tlu.edu.vn |
 ---
 
 ## 3. Cấu Trúc Mã Nguồn Trong Thư Mục Nhóm
