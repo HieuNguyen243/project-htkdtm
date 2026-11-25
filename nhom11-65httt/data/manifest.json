@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0-draft.1",
+  "dataset_version": "v20261125_2139",
+  "released_at": "2026-11-25T21:39:44.058320+07:00",
+  "export_mode": "full",
+  "input_run_ids": [
+    "run_20261125T143944Z"
+  ],
+  "data_origin": "real",
+  "scope": {
+    "districts": [
+      "Thanh Xuân",
+      "Đống Đa",
+      "Cầu Giấy"
+    ],
+    "property_scope": "room_rental_only"
+  },
+  "source_rights_status": "internal_technical_sample_pending_written_sharing_approval",
+  "representative_rule": "accepted -> latest collected_at -> highest completeness -> ascending listing_id",
+  "counts": {
+    "raw_input": 689,
+    "rejected": 5,
+    "needs_review": 0,
+    "listings_all": 689,
+    "confirmed_duplicates_removed": 12,
+    "suspected_duplicates_flagged": 66,
+    "published_listings": 672,
+    "by_district": {
+      "Đống Đa": 229,
+      "Thanh Xuân": 210,
+      "Cầu Giấy": 233
+    },
+    "by_source": {
+      "mixstay": 56,
+      "muaban": 74,
+      "phongtro123": 542
+    },
+    "by_price_basis": {
+      "room": 650,
+      "person": 22
+    }
+  },
+  "files": {
+    "listings.csv": {
+      "sha256": "47a81607ebc6c2e4b649bf942b277a101b3a0228827703651fc5ba36bb0fafee",
+      "row_count": 672
+    },
+    "listings_all.csv": {
+      "sha256": "629c10ebae388488d3a321c5d0b10f57d222d9302c5e5922e31fea8a9a4d451b",
+      "row_count": 689
+    },
+    "records_to_review.csv": {
+      "sha256": "4c1a9bf20aa1bd0a8f3ce27001ea10bc216098402e67e612d04d2599820001dd",
+      "row_count": 0
+    }
+  }
+}
