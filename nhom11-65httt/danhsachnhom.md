@@ -5,7 +5,7 @@
 - **Tên nhóm:** nhom11-65httt
 - **Tên lớp học phần:** Hệ thống kinh doanh thông minh
 - **Tên đề tài:** He thong phan tich thi truong phong tro
-- **Giảng viên hướng dẫn:** Ths. Dỗ Oanh Cường
+- **Giảng viên hướng dẫn:** Ths. Đỗ Oanh Cường
 
 ---
 
