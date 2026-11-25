@@ -1,0 +1,6 @@
+﻿"fee_code","label_vi","allowed_units","interpretation","catalog_version"
+"electricity","Tiền điện","vnd_per_kwh|vnd_per_person_month|vnd_per_room_month","Giữ nguyên đơn vị nguồn; không cộng với phí tháng khác đơn vị","0.1-draft"
+"water","Tiền nước","vnd_per_m3|vnd_per_person_month|vnd_per_room_month","Không mặc định kỳ thu nếu nguồn không ghi rõ","0.1-draft"
+"internet","Internet","vnd_per_person_month|vnd_per_room_month","Thiếu số tiền không đồng nghĩa miễn phí","0.1-draft"
+"parking","Gửi xe","vnd_per_vehicle_month|vnd_per_room_month","Loại xe phải có căn cứ nếu nêu riêng","0.1-draft"
+"service","Phí dịch vụ","vnd_per_person_month|vnd_per_room_month","Không gộp vào giá thuê","0.1-draft"
