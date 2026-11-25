@@ -1,0 +1,3 @@
+﻿"campus_id","school_name","campus_name","address_text","latitude","longitude","geo_confidence","source_url","checked_at","catalog_version"
+"tlu_hanoi","Trường Đại học Thủy lợi","Cơ sở chính Hà Nội","175 Tây Sơn, phường Kim Liên, Hà Nội","","","unknown","https://tlu.edu.vn/Portals/0/572bcdhtl.pdf","2026-11-25","0.1-draft"
+"utc_hanoi","Trường Đại học Giao thông Vận tải","Cơ sở Hà Nội","Số 3 Cầu Giấy, phường Láng, Hà Nội","","","unknown","https://fit.utc.edu.vn/gioi-thieu/co-cau-to-chuc/van-phong-khoa","2026-11-25","0.1-draft"
