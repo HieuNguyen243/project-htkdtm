@@ -1,0 +1,96 @@
+{
+  "origin": "synthetic",
+  "note": "Synthetic fixture strictly separated from real market data for TV1-07/TV1-08 verification.",
+  "extraction_samples": [
+    {
+      "input": {
+        "title": "Cho thuê phòng khép kín 25 m², Đống Đa",
+        "price_raw": "3,5 triệu/tháng",
+        "rent_vnd_month": "3500000",
+        "area_m2": "25",
+        "address_clean": "Ngõ 10 Xã Đàn, Phường Phương Liên, Đống Đa",
+        "description_clean": "Phòng khép kín sạch sẽ, điều hòa, nóng lạnh, không chung chủ. Điện 4k/số.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "3500000",
+        "price_basis": "room",
+        "area_m2": "25",
+        "room_type": "self_contained",
+        "ward": "Phương Liên"
+      }
+    },
+    {
+      "input": {
+        "title": "Tìm bạn ở ghép Cầu Giấy",
+        "price_raw": "1,8 triệu/tháng",
+        "rent_vnd_month": "1800000",
+        "area_m2": "20",
+        "address_clean": "Ngõ 68 Cầu Giấy, Phường Quan Hoa, Cầu Giấy",
+        "description_clean": "Ở ghép 1.8 triệu/người/tháng, không có điều hòa.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "1800000",
+        "price_basis": "person",
+        "area_m2": "20",
+        "room_type": "shared_place",
+        "ward": "Quan Hoa"
+      }
+    },
+    {
+      "input": {
+        "title": "Phòng studio mini Pháo Đài Láng",
+        "price_raw": "4.7 triệu/tháng",
+        "rent_vnd_month": "4700000",
+        "area_m2": "",
+        "address_clean": "Ngõ 44 Pháo Đài Láng, Phường Láng Thượng, Đống Đa",
+        "description_clean": "Phòng studio đầy đủ nội thất, cọc 1 tháng.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "4700000",
+        "price_basis": "room",
+        "area_m2": "",
+        "room_type": "studio_mini",
+        "ward": "Láng Thượng"
+      }
+    }
+  ],
+  "duplicate_pairs": [
+    {
+      "left": {
+        "listing_id": "src_a:1",
+        "district": "Đống Đa",
+        "rent_vnd_month": "4500000",
+        "area_m2": "25",
+        "address_clean": "Số 169 Đường Tây Sơn, Đống Đa"
+      },
+      "right": {
+        "listing_id": "src_b:2",
+        "district": "Đống Đa",
+        "rent_vnd_month": "4500000",
+        "area_m2": "25",
+        "address_clean": "169 Tây Sơn, Quận Đống Đa"
+      },
+      "gold_same_room": true
+    },
+    {
+      "left": {
+        "listing_id": "src_a:3",
+        "district": "Thanh Xuân",
+        "rent_vnd_month": "3200000",
+        "area_m2": "20",
+        "address_clean": "Ngõ 10 Nguyễn Trãi, Thanh Xuân"
+      },
+      "right": {
+        "listing_id": "src_b:4",
+        "district": "Thanh Xuân",
+        "rent_vnd_month": "3200000",
+        "area_m2": "20",
+        "address_clean": "Ngõ 190 Nguyễn Trãi, Thanh Xuân"
+      },
+      "gold_same_room": false
+    }
+  ]
+}

@@ -1,0 +1,614 @@
+{
+  "origin": "real",
+  "dataset_version": "v20261125_2139",
+  "note": "Real-source labeled benchmark (PII-redacted, split into development and holdout by listing_id/cluster) for TV1-07 honest extraction and deduplication measurement.",
+  "split_rule": "6 development samples (2 per source) and 12 holdout samples (4 per source); duplicate pairs keep clusters strictly separated.",
+  "extraction_samples": [
+    {
+      "listing_id": "phongtro123:309705",
+      "raw_ref": "data/phongtro123_rooms.csv#phongtro123:309705",
+      "split": "development",
+      "input": {
+        "title": "Cho thuê phòng trọ khép kín, rộng 25m2 giá cho thuê 2,6triệu/tháng",
+        "price_raw": "2.6 triệu/tháng",
+        "rent_vnd_month": "2600000",
+        "area_m2": "25",
+        "address_clean": "68 ngõ 1 Đường Phan Đình Giót, Phường Phương Liệt, Hà Nội",
+        "description_clean": "Phòng trọ khép kín, 25m2. Có bình nóng lạnh, điều hòa, khu bếp nấu ăn, phơi quần áo, internet, camera an ninh.",
+        "amenities": "Có kệ bếp, Có máy lạnh, Có hầm để xe"
+      },
+      "gold": {
+        "rent_vnd_month": "2600000",
+        "price_basis": "room",
+        "area_m2": "25",
+        "room_type": "self_contained",
+        "ward": "Phương Liệt"
+      }
+    },
+    {
+      "listing_id": "phongtro123:670926",
+      "raw_ref": "data/phongtro123_rooms.csv#phongtro123:670926",
+      "split": "holdout",
+      "input": {
+        "title": "Cho thuê phòng trọ tầng 3 khép kín 35m2",
+        "price_raw": "4 triệu/tháng",
+        "rent_vnd_month": "4000000",
+        "area_m2": "35",
+        "address_clean": "74 ngõ 127 Phố Hào Nam, Phường Ô Chợ Dừa, Hà Nội",
+        "description_clean": "Phòng riêng 35m2 khép kín ở tầng 3. Có sân phơi tầng 4: 55m2 chung với gia dình, có máy giặt. Ở tối đa 3 người, nữ, sinh viên hoặc công chức. Giá thuê: 4tr/người/tháng khi ở 1 người. 2,5tr/người/tháng...",
+        "amenities": "Đầy đủ nội thất, Có máy giặt"
+      },
+      "gold": {
+        "rent_vnd_month": "4000000",
+        "price_basis": "person",
+        "area_m2": "35",
+        "room_type": "self_contained",
+        "ward": "Ô Chợ Dừa"
+      }
+    },
+    {
+      "listing_id": "phongtro123:685942",
+      "raw_ref": "data/phongtro123_rooms.csv#phongtro123:685942",
+      "split": "holdout",
+      "input": {
+        "title": "Cho thuê phòng trọ độc lập, có điều hòa nóng lạnh - Phố Lương Sử C, quận Đống Đa",
+        "price_raw": "2.7 triệu/tháng",
+        "rent_vnd_month": "2700000",
+        "area_m2": "20",
+        "address_clean": "Phố Lương Sử C, Phường Văn Miếu - Quốc Tử Giám, Hà Nội",
+        "description_clean": "Cho thue phòng trọ khép kín, độc lập vskk Đ/C: Phố Lương Sử C, Phường Văn Chương, Quận Đống Đa, Hà Nội dt 20m2 điện nước dân, điều hòa nóng lạnh cọc 1tr1 LH để biết thêm chi tiết",
+        "amenities": "Có máy lạnh, Có máy giặt, Không chung chủ, Giờ giấc tự do, Có hầm để xe"
+      },
+      "gold": {
+        "rent_vnd_month": "2700000",
+        "price_basis": "room",
+        "area_m2": "20",
+        "room_type": "self_contained",
+        "ward": "Văn Miếu - Quốc Tử Giám"
+      }
+    },
+    {
+      "listing_id": "phongtro123:693166",
+      "raw_ref": "data/phongtro123_rooms.csv#phongtro123:693166",
+      "split": "development",
+      "input": {
+        "title": "Trọ đẹp Thanh Xuân inbox em ngayZalo [số điện thoại]",
+        "price_raw": "4 triệu/tháng",
+        "rent_vnd_month": "4000000",
+        "area_m2": "17",
+        "address_clean": "27A Đường Bùi Xương Trạch, Phường Khương Đình, Hà Nội",
+        "description_clean": "Ngõ 125, Bùi Xương Trạch, Khương Đình Giá chỉ từ 4tr đến 4tr4 Gần Đh Thăng Long, CĐ Y Hà Nội, Đh Y Hà Nội, Đh Khoa học tự nhiên, Đh Thủy Lợi, Học viện ngân hàng Điện 4k2, nước 35k, mạng 100k",
+        "amenities": "Đầy đủ nội thất, Có gác, Có kệ bếp, Có máy lạnh, Có máy giặt, Có tủ lạnh, Có thang máy, Không chung chủ, Giờ giấc tự do, Có bảo vệ 24/24, Có hầm để xe"
+      },
+      "gold": {
+        "rent_vnd_month": "4000000",
+        "price_basis": "room",
+        "area_m2": "17",
+        "room_type": "loft_room",
+        "ward": "Khương Đình"
+      }
+    },
+    {
+      "listing_id": "phongtro123:701085",
+      "raw_ref": "data/phongtro123_rooms.csv#phongtro123:701085",
+      "split": "holdout",
+      "input": {
+        "title": "CHO THUÊ PHÒNG ĐẸP NGAY MẶT ĐƯỜNG TRẦN DUY HƯNG",
+        "price_raw": "4.5 triệu/tháng",
+        "rent_vnd_month": "4500000",
+        "area_m2": "25",
+        "address_clean": "số 6, 148 Đường Trần Duy Hưng, Xã Trung Giã, Hà Nội",
+        "description_clean": "- Phòng trọ 25m đường Trần Duy Hưng,Trung Hòa,Cầu Giấy. - Nội thất đầy đủ. - Tình trạng: Nhà mới, vào ở luôn. - Căn hộ studio khép kín.",
+        "amenities": "Đầy đủ nội thất"
+      },
+      "gold": {
+        "rent_vnd_month": "4500000",
+        "price_basis": "room",
+        "area_m2": "25",
+        "room_type": "studio_mini",
+        "ward": "Trung Hòa"
+      }
+    },
+    {
+      "listing_id": "phongtro123:708912",
+      "raw_ref": "data/phongtro123_rooms.csv#phongtro123:708912",
+      "split": "holdout",
+      "input": {
+        "title": "cho thuê 2 phòng trọ còn trống tại khu vực Quan Nhân Thanh Xuân",
+        "price_raw": "3 triệu/tháng",
+        "rent_vnd_month": "3000000",
+        "area_m2": "20",
+        "address_clean": "68 Phố Quan Nhân, Phường Thanh Xuân, Hà Nội",
+        "description_clean": "cho thuê 2 phòng trọ còn trống tại khu vực Quan Nhân Thanh Xuân có chỗ phơi quần áo cửa vân tay đi lại thoải mái 24/24 nếu muốn nhắn zalo thì nhắn số [số điện thoại]",
+        "amenities": "Đầy đủ nội thất, Có máy lạnh, Có máy giặt, Giờ giấc tự do, Có hầm để xe"
+      },
+      "gold": {
+        "rent_vnd_month": "3000000",
+        "price_basis": "room",
+        "area_m2": "20",
+        "room_type": "room",
+        "ward": "Thanh Xuân"
+      }
+    },
+    {
+      "listing_id": "muaban:70529343",
+      "raw_ref": "data/muaban_rooms.csv#muaban:70529343",
+      "split": "development",
+      "input": {
+        "title": "5T Thang Máy Phòng ngõ 116 An Trạch - Cát Linh 25m 3,2 tr/1th",
+        "price_raw": "3,2 triệu/tháng",
+        "rent_vnd_month": "3200000",
+        "area_m2": "18",
+        "address_clean": "17, Đường An Trạch, Phường Ô Chợ Dừa, Quận Đống Đa, Hà Nội",
+        "description_clean": "5 Tầng Thang Máy phòng đẹp 17 Ngõ 116 An trạch- Cát Linh. - Riêng biệt, độc lập, Ko chung chủ giờ giấc tự do đi khoá về mở. - Để xe miễn phí. Đi bộ mấy bước chân ra ga tầu điện Cát Linh - Hà Đông.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "3200000",
+        "price_basis": "room",
+        "area_m2": "18",
+        "room_type": "room",
+        "ward": "Ô Chợ Dừa"
+      }
+    },
+    {
+      "listing_id": "muaban:71337167",
+      "raw_ref": "data/muaban_rooms.csv#muaban:71337167",
+      "split": "holdout",
+      "input": {
+        "title": "Cho thuê phòng full đồ, ban công thoáng mát giá 3tr",
+        "price_raw": "3 triệu/tháng",
+        "rent_vnd_month": "3000000",
+        "area_m2": "25",
+        "address_clean": "Phố Nguyễn Chánh, Phường Trung Hoà, Quận Cầu Giấy, Hà Nội",
+        "description_clean": "CHO THUÊ PHÒNG FULL ĐỒ, BAN CÔNG THOÁNG MÁT GIÁ 3TR - Đ/c : Số 9A Ngõ 2 Nguyễn Chánh, Trung Hòa, Cầu Giấy, HN - Diện tích: 25m2 - Nội thất đủ đồ: NL+ ĐH + Giường 1.6mx2m + Tủ 2 cánh",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "3000000",
+        "price_basis": "room",
+        "area_m2": "25",
+        "room_type": "room",
+        "ward": "Trung Hoà"
+      }
+    },
+    {
+      "listing_id": "muaban:71346991",
+      "raw_ref": "data/muaban_rooms.csv#muaban:71346991",
+      "split": "holdout",
+      "input": {
+        "title": "[CHÍNH CHỦ] TÌM 1 BẠN NỮ Ở GHÉP – CHUNG CƯ MINI CÓ VÂN TAY",
+        "price_raw": "2 triệu/tháng",
+        "rent_vnd_month": "2000000",
+        "area_m2": "20",
+        "address_clean": "số nhà 17, Phố Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Hà Nội",
+        "description_clean": "TÌM 1 BẠN NỮ Ở GHÉP – CHUNG CƯ MINI. Cọc chỉ 1 triệu/người, có thể thương lượng, hỗ trợ sinh viên! Gần các trường ĐH Thủy lợi, CĐ Y Dược Hà Nội.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "2000000",
+        "price_basis": "person",
+        "area_m2": "20",
+        "room_type": "shared_place",
+        "ward": "Ngã Tư Sở"
+      }
+    },
+    {
+      "listing_id": "muaban:71358960",
+      "raw_ref": "data/muaban_rooms.csv#muaban:71358960",
+      "split": "development",
+      "input": {
+        "title": "1 PHÒNG TRỐNG NGAY NGÃ TƯ SỞ - GIÁ CHỈ 3.9 TRIỆU",
+        "price_raw": "3,9 triệu/tháng",
+        "rent_vnd_month": "3900000",
+        "area_m2": "20",
+        "address_clean": "Ngã Tư Sở, Phường Ngã Tư Sở, Quận Đống Đa, Hà Nội",
+        "description_clean": "1 PHÒNG TRỐNG NGAY NGÃ TƯ SỞ - GIÁ CHỈ 3.9 TRIỆU. Vị trí: Gần Ngã Tư Sở, di chuyển thuận tiện sang Đống Đa, Thanh Xuân, Cầu Giấy.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "3900000",
+        "price_basis": "room",
+        "area_m2": "20",
+        "room_type": "room",
+        "ward": "Ngã Tư Sở"
+      }
+    },
+    {
+      "listing_id": "muaban:71377728",
+      "raw_ref": "data/muaban_rooms.csv#muaban:71377728",
+      "split": "holdout",
+      "input": {
+        "title": "Phòng trọ Yên Hòa cho nam giới thuê",
+        "price_raw": "2,5 triệu/tháng",
+        "rent_vnd_month": "2500000",
+        "area_m2": "18",
+        "address_clean": "10A ngách 251/10 Nguyễn Khang, Đường Nguyễn Khang, Phường Yên Hoà, Quận Cầu Giấy, Hà Nội",
+        "description_clean": "Mình đăng hộ cho người thân ở Yên Hòa. Tìm người thuê nam giới. Điện 3,5k/số, nước 60k. giờ tự do.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "2500000",
+        "price_basis": "room",
+        "area_m2": "18",
+        "room_type": "room",
+        "ward": "Yên Hoà"
+      }
+    },
+    {
+      "listing_id": "muaban:71385566",
+      "raw_ref": "data/muaban_rooms.csv#muaban:71385566",
+      "split": "holdout",
+      "input": {
+        "title": "PHÒNG TRỌ DƯƠNG QUẢNG HÀM – CẦU GIẤY | 2,4 TRIỆU/THÁNG",
+        "price_raw": "2,4 triệu/tháng",
+        "rent_vnd_month": "2400000",
+        "area_m2": "20",
+        "address_clean": "2b ngõ 79/40/22, Phố Dương Quảng Hàm, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
+        "description_clean": "PHÒNG TRỌ DƯƠNG QUẢNG HÀM – CẦU GIẤY | 2,4 TRIỆU/THÁNG. Phòng sạch sẽ, thoáng mát, có cửa sổ. Có sẵn giường, tủ quần áo, điều hòa, bình nóng lạnh.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "2400000",
+        "price_basis": "room",
+        "area_m2": "20",
+        "room_type": "room",
+        "ward": "Quan Hoa"
+      }
+    },
+    {
+      "listing_id": "mixstay:cmrc65a2m0007olhkv8ntd5i4",
+      "raw_ref": "data/mixstay_rooms.csv#mixstay:cmrc65a2m0007olhkv8ntd5i4",
+      "split": "development",
+      "input": {
+        "title": "STUDIO FULL NỘI THẤT Ở 426/20 ĐƯỜNG LÁNG",
+        "price_raw": "5.700.000 ₫/tháng",
+        "rent_vnd_month": "5700000",
+        "area_m2": "30",
+        "room_type": "Studio",
+        "address_clean": "Đống Đa • NGõ 426 đường Láng",
+        "description_clean": "Điện: 4k/số, Nước: 35k/m3, Mạng:100k/phòng, dịch vụ chung 180k/người ( thang máy, vệ sinh, giặt, điện chung...) Free 2 xe máy( xe thứ 3 tính thêm 150k/tháng)",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "5700000",
+        "price_basis": "room",
+        "area_m2": "30",
+        "room_type": "studio_mini",
+        "ward": ""
+      }
+    },
+    {
+      "listing_id": "mixstay:cmrf8iz020003ckx0rzsw08gq",
+      "raw_ref": "data/mixstay_rooms.csv#mixstay:cmrf8iz020003ckx0rzsw08gq",
+      "split": "holdout",
+      "input": {
+        "title": "Studio giá mềm Kim Giang",
+        "price_raw": "3.900.000 ₫/tháng",
+        "rent_vnd_month": "3900000",
+        "area_m2": "26.5",
+        "room_type": "Studio",
+        "address_clean": "Thanh Xuân • Kim giang",
+        "description_clean": "Điện: 3,8k/ số. Nước: 30k/1 khối. Mạng : 100k/ 1 phòng . Dv chung ( máy giặt + vệ sinh đổ rác + thang máy ): 150k/1 người. Xe free",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "3900000",
+        "price_basis": "room",
+        "area_m2": "26.5",
+        "room_type": "studio_mini",
+        "ward": ""
+      }
+    },
+    {
+      "listing_id": "mixstay:cmrn2csca0001sd00hcqeroi5",
+      "raw_ref": "data/mixstay_rooms.csv#mixstay:cmrn2csca0001sd00hcqeroi5",
+      "split": "holdout",
+      "input": {
+        "title": "PHÒNG DUPLEX ĐẸP FULL NỘI THẤT - TRẦN QUANG DIỆU, ĐỐNG ĐA",
+        "price_raw": "7.600.000 ₫/tháng",
+        "rent_vnd_month": "7600000",
+        "area_m2": "35",
+        "room_type": "Duplex",
+        "address_clean": "Đống Đa • Trần Quang Diệu",
+        "description_clean": "- Nội thất: FULL - Điện: 4k, Nước: 130k/người - Ký HĐ từ 6-12 tháng, Thanh toán 2 cọc 1 - Ưu tiên ở 1 xe",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "7600000",
+        "price_basis": "room",
+        "area_m2": "35",
+        "room_type": "loft_room",
+        "ward": ""
+      }
+    },
+    {
+      "listing_id": "mixstay:cmrudo21z0007tjcppesmg0xd",
+      "raw_ref": "data/mixstay_rooms.csv#mixstay:cmrudo21z0007tjcppesmg0xd",
+      "split": "development",
+      "input": {
+        "title": "Phòng 1 ngủ + gác xép ngõ 92 Nguyễn Khánh Toàn",
+        "price_raw": "4.800.000 ₫/tháng",
+        "rent_vnd_month": "4800000",
+        "area_m2": "25",
+        "room_type": "Gác xép",
+        "address_clean": "Cầu Giấy • Nguyễn Khánh Toàn",
+        "description_clean": "Phòng 1 ngủ + gác xép, diện tích 25m2. Giá điện 4k/số, nước 35k/khối. Phí dịch vụ 150k/người.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "4800000",
+        "price_basis": "room",
+        "area_m2": "25",
+        "room_type": "loft_room",
+        "ward": ""
+      }
+    },
+    {
+      "listing_id": "mixstay:cmsfv2pd90003uzq27x70155s",
+      "raw_ref": "data/mixstay_rooms.csv#mixstay:cmsfv2pd90003uzq27x70155s",
+      "split": "holdout",
+      "input": {
+        "title": "Phòng khép kín 25m2 ngõ Triều Khúc",
+        "price_raw": "3.500.000 ₫/tháng",
+        "rent_vnd_month": "3500000",
+        "area_m2": "25",
+        "room_type": "Phòng đơn",
+        "address_clean": "Thanh Xuân • Triều Khúc",
+        "description_clean": "Phòng 25m2 ở luôn. Chi phí dịch vụ: Điện 4k/số, nước 35k/m3, dịch vụ chung 150k/người, mạng 100k/phòng.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "3500000",
+        "price_basis": "room",
+        "area_m2": "25",
+        "room_type": "self_contained",
+        "ward": ""
+      }
+    },
+    {
+      "listing_id": "mixstay:cmt43dxz4000152rc52yru98k",
+      "raw_ref": "data/mixstay_rooms.csv#mixstay:cmt43dxz4000152rc52yru98k",
+      "split": "holdout",
+      "input": {
+        "title": "Phòng Studio 40m2 tại ngõ 58/74 Nguyễn Khánh toàn",
+        "price_raw": "4.500.000 ₫/tháng",
+        "rent_vnd_month": "4500000",
+        "area_m2": "40",
+        "room_type": "Studio",
+        "address_clean": "Cầu Giấy • Nguyễn Khánh Toàn",
+        "description_clean": "Cho thuê phòng Studio ở luôn tại Nguyễn Khánh Toàn. Chi phí dịch vụ: Điện 4k/số, Nước 35k/khối, Mạng 100k/phòng.",
+        "amenities": ""
+      },
+      "gold": {
+        "rent_vnd_month": "4500000",
+        "price_basis": "room",
+        "area_m2": "40",
+        "room_type": "studio_mini",
+        "ward": ""
+      }
+    }
+  ],
+  "duplicate_pairs": [
+    {
+      "split": "holdout",
+      "left": {
+        "listing_id": "phongtro123:698595",
+        "district": "Đống Đa",
+        "rent_vnd_month": "3500000",
+        "area_m2": "26",
+        "room_type": "self_contained",
+        "address_clean": "24 ngõ 41 Đường Đông Tác, Phường Kim Liên, Hà Nội",
+        "title": "Cho thuê phòng đẹp giá rẻ 3,5tr , Kim Liên Đống Đa . Đi Bộ ra Vincom"
+      },
+      "right": {
+        "listing_id": "phongtro123:699153",
+        "district": "Đống Đa",
+        "rent_vnd_month": "3500000",
+        "area_m2": "26",
+        "room_type": "self_contained",
+        "address_clean": "24 ngõ 41 Đường Đông Tác, Phường Kim Liên, Hà Nội",
+        "title": "Cho thuê phòng đẹp giá rẻ 3,5tr, Kim Liên Đống Đa. Đi bộ ra Vincom Phạm Ngọc Thạch"
+      },
+      "gold_same_room": true
+    },
+    {
+      "split": "holdout",
+      "left": {
+        "listing_id": "phongtro123:699472",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "1500000",
+        "area_m2": "10",
+        "room_type": "room",
+        "address_clean": "ngõ 39 Phố Phạm Tuấn Tài, Phường Cầu Giấy, Hà Nội",
+        "title": "CHO THUÊ PHÒNG 1,5 TR NHÀ 15 NGÕ 39 PHẠM TUẤN TÀI – CẦU GIẤY"
+      },
+      "right": {
+        "listing_id": "phongtro123:699474",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "1500000",
+        "area_m2": "10",
+        "room_type": "room",
+        "address_clean": "ngõ 39 Phố Phạm Tuấn Tài, Phường Cầu Giấy, Hà Nội",
+        "title": "CHO THUÊ PHÒNG 1,5 TR NHÀ 15 NGÕ 39 PHẠM TUẤN TÀI – CẦU GIẤY"
+      },
+      "gold_same_room": true
+    },
+    {
+      "split": "holdout",
+      "left": {
+        "listing_id": "phongtro123:685977",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "2300000",
+        "area_m2": "20",
+        "room_type": "room",
+        "address_clean": "2B ngõ 79/40/22 Đường Dương Quảng Hàm, Phường Nghĩa Đô, Hà Nội",
+        "title": "2,3tr – Phòng full đồ Dương Quảng Hàm, quận Cầu Giấy"
+      },
+      "right": {
+        "listing_id": "phongtro123:716541",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "2400000",
+        "area_m2": "20",
+        "room_type": "room",
+        "address_clean": "2B ngõ 79/40/22 Đường Dương Quảng Hàm, Phường Nghĩa Đô, Hà Nội",
+        "title": "PHÒNG TRỌ DƯƠNG QUẢNG HÀM – CẦU GIẤY | 2,4 TRIỆU/THÁNG"
+      },
+      "gold_same_room": true
+    },
+    {
+      "split": "development",
+      "left": {
+        "listing_id": "phongtro123:703996",
+        "district": "Thanh Xuân",
+        "rent_vnd_month": "4300000",
+        "area_m2": "30",
+        "room_type": "self_contained",
+        "address_clean": "106 ngõ 1 Đường Phan Đình Giót, Phường Phương Liệt, Hà Nội",
+        "title": "CHO THUÊ PHÒNG TRỌ FULL NỘI THẤT MỚI"
+      },
+      "right": {
+        "listing_id": "phongtro123:706992",
+        "district": "Thanh Xuân",
+        "rent_vnd_month": "4300000",
+        "area_m2": "30",
+        "room_type": "studio_mini",
+        "address_clean": "106 ngõ 1 Đường Phan Đình Giót, Phường Phương Liệt, Hà Nội",
+        "title": "STUDIO FULL NỘI THẤT – BAN CÔNG RIÊNG – KHÔNG CHUNG CHỦ | THANH XUÂN"
+      },
+      "gold_same_room": true
+    },
+    {
+      "split": "holdout",
+      "left": {
+        "listing_id": "phongtro123:699137",
+        "district": "Thanh Xuân",
+        "rent_vnd_month": "2000000",
+        "area_m2": "15",
+        "room_type": "self_contained",
+        "address_clean": "Số 70 ngõ 125 Đường Bùi Xương Trạch, Phường Khương Đình, Hà Nội",
+        "title": "Cho thuê phòng trọ 15m² ở Bùi Xương Trạch, Khương Đình"
+      },
+      "right": {
+        "listing_id": "phongtro123:702701",
+        "district": "Thanh Xuân",
+        "rent_vnd_month": "2000000",
+        "area_m2": "15",
+        "room_type": "self_contained",
+        "address_clean": "Số 70 ngõ 125 Đường Bùi Xương Trạch, Phường Khương Đình, Hà Nội",
+        "title": "Cho thuê phòng trọ giá rẻ ở Khương Đình, Hà Nội"
+      },
+      "gold_same_room": true
+    },
+    {
+      "split": "holdout",
+      "left": {
+        "listing_id": "mixstay:cmrudbzfx0003irezg3x9n7e9",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "4800000",
+        "area_m2": "25",
+        "room_type": "studio_mini",
+        "address_clean": "Cầu Giấy • Nguyễn Khánh Toàn",
+        "title": "Studio full đồ Ngõ 58 Nguyễn Khánh Toàn"
+      },
+      "right": {
+        "listing_id": "mixstay:cmrudo21z0007tjcppesmg0xd",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "4800000",
+        "area_m2": "25",
+        "room_type": "loft_room",
+        "address_clean": "Cầu Giấy • Nguyễn Khánh Toàn",
+        "title": "Phòng 1 ngủ + gác xép ngõ 92 Nguyễn Khánh Toàn"
+      },
+      "gold_same_room": false
+    },
+    {
+      "split": "holdout",
+      "left": {
+        "listing_id": "phongtro123:711873",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "3300000",
+        "area_m2": "25",
+        "room_type": "self_contained",
+        "address_clean": "27 ngõ 255 Đường Cầu Giấy, Phường Cầu Giấy, Hà Nội",
+        "title": "Nhà 27 ngõ 255 Cầu Giấy trống phòng 202 giá 3,3 triệu"
+      },
+      "right": {
+        "listing_id": "phongtro123:711874",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "3200000",
+        "area_m2": "25",
+        "room_type": "self_contained",
+        "address_clean": "27 ngõ 255 Đường Cầu Giấy, Phường Cầu Giấy, Hà Nội",
+        "title": "NHÀ 27 NGÕ 255 CẦU GIẤY TRỐNG: phòng 302 giá 3, 2 triệu"
+      },
+      "gold_same_room": false
+    },
+    {
+      "split": "development",
+      "left": {
+        "listing_id": "mixstay:cmrwxy44v000b5e6otkidbdv6",
+        "district": "Đống Đa",
+        "rent_vnd_month": "6000000",
+        "area_m2": "25",
+        "room_type": "studio_mini",
+        "address_clean": "Đống Đa • tôn đức thắng",
+        "title": "KHAI TRƯƠNG STUDIO 162A TÔN ĐỨC THẮNG"
+      },
+      "right": {
+        "listing_id": "mixstay:cmrwy4vfd000d5e6odo4vi51f",
+        "district": "Đống Đa",
+        "rent_vnd_month": "6000000",
+        "area_m2": "25",
+        "room_type": "shared_place",
+        "address_clean": "Đống Đa • tôn đức thắng",
+        "title": "GIƯỜNG TẦNG CĂN STUDIO 162A TÔN ĐỨC THẮNG"
+      },
+      "gold_same_room": false
+    },
+    {
+      "split": "holdout",
+      "left": {
+        "listing_id": "phongtro123:694416",
+        "district": "Đống Đa",
+        "rent_vnd_month": "4300000",
+        "area_m2": "24",
+        "room_type": "self_contained",
+        "address_clean": "111 Đường Nguyễn Khuyến, Phường Văn Miếu - Quốc Tử Giám, Hà Nội",
+        "title": "Cho thuê phòng đẹp giá 4,3 tr phố Nguyễn Khuyến, Đống Đa"
+      },
+      "right": {
+        "listing_id": "muaban:71358960",
+        "district": "Đống Đa",
+        "rent_vnd_month": "3900000",
+        "area_m2": "20",
+        "room_type": "room",
+        "address_clean": "Ngã Tư Sở, Phường Ngã Tư Sở, Quận Đống Đa, Hà Nội",
+        "title": "1 PHÒNG TRỐNG NGAY NGÃ TƯ SỞ - GIÁ CHỈ 3.9 TRIỆU"
+      },
+      "gold_same_room": false
+    },
+    {
+      "split": "holdout",
+      "left": {
+        "listing_id": "phongtro123:685977",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "2300000",
+        "area_m2": "20",
+        "room_type": "room",
+        "address_clean": "2B ngõ 79/40/22 Đường Dương Quảng Hàm, Phường Nghĩa Đô, Hà Nội",
+        "title": "2,3tr – Phòng full đồ Dương Quảng Hàm, quận Cầu Giấy"
+      },
+      "right": {
+        "listing_id": "muaban:71385566",
+        "district": "Cầu Giấy",
+        "rent_vnd_month": "2400000",
+        "area_m2": "20",
+        "room_type": "room",
+        "address_clean": "2b ngõ 79/40/22, Phố Dương Quảng Hàm, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
+        "title": "PHÒNG TRỌ DƯƠNG QUẢNG HÀM – CẦU GIẤY | 2,4 TRIỆU/THÁNG"
+      },
+      "gold_same_room": true
+    }
+  ]
+}
