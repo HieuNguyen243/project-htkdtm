@@ -1,0 +1,45 @@
+{
+  "batch_id": "B001",
+  "schema_version": "1.0.0-draft.1",
+  "dataset_version": "synthetic_B001",
+  "released_at": "2026-11-25T10:00:00Z",
+  "export_mode": "full",
+  "data_origin": "synthetic",
+  "test_profile": "bi_kpi_missing_values",
+  "scope": {
+    "districts": [
+      "Đống Đa",
+      "Thanh Xuân",
+      "Cầu Giấy"
+    ],
+    "purpose": "BI testing only"
+  },
+  "input_run_ids": [
+    "demo_B001"
+  ],
+  "source_rights_status": "synthetic_test_data",
+  "counts": {
+    "fixture_rows": 7,
+    "missing_price": 2,
+    "missing_area": 2,
+    "by_district": {
+      "Đống Đa": 3,
+      "Thanh Xuân": 2,
+      "Cầu Giấy": 2
+    },
+    "by_source": {
+      "demo": 7
+    },
+    "by_price_basis": {
+      "room": 6,
+      "person": 1
+    }
+  },
+  "files": {
+    "listings.csv": {
+      "row_count": 7,
+      "sha256": "16a252fea0acb70e6ad6bb8e8e12b49d7af1c56b8aef8da575c764992e09b4de"
+    }
+  },
+  "warning": "Synthetic fixture. Not real market data. Missing-price rows are intentional."
+}

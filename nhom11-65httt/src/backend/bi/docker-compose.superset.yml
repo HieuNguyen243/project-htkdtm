@@ -1,0 +1,43 @@
+services:
+  superset_meta:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: superset
+      POSTGRES_USER: superset
+      POSTGRES_PASSWORD: ${SUPERSET_DB_PASSWORD:?Required}
+    volumes:
+      - superset_metadata:/var/lib/postgresql/data
+    networks:
+      - bi_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U superset -d superset"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  superset_bi:
+    build:
+      context: ./superset
+      dockerfile: Dockerfile
+    container_name: phongtro_superset_app
+    restart: unless-stopped
+    environment:
+      SUPERSET_CONFIG_PATH: /app/pythonpath/superset_config.py
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:?Required}
+      SUPERSET_DB_PASSWORD: ${SUPERSET_DB_PASSWORD:?Required}
+    ports:
+      - "127.0.0.1:8089:8088"
+    volumes:
+      - ./superset/superset_config.py:/app/pythonpath/superset_config.py:ro
+    networks:
+      - bi_network
+    depends_on:
+      superset_meta:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+
+volumes:
+  superset_metadata:
+    name: phongtro_superset_metadata
