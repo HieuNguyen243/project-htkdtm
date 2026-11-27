@@ -32,7 +32,7 @@ class ProviderTests(unittest.TestCase):
         resp = self.mock.recommend(self.valid_prefs, profile_id="tlu_under_4m")
         self.assertEqual(resp.status, "ok")
         self.assertTrue(resp.is_mock)
-        self.assertEqual(len(resp.items), 3)
+        self.assertEqual(len(resp.items), 4)
         self.assertEqual(resp.items[0]["listing"]["listing_id"], "MOCK-001")
 
     def test_mock_provider_handles_no_match_and_unsimulated_profile(self) -> None:
