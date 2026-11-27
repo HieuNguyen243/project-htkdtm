@@ -1,0 +1,40 @@
+name: phongtro-bi
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: phongtro_bi_db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: phongtro_bi_demo
+      POSTGRES_USER: bi_admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+      TZ: Asia/Ho_Chi_Minh
+
+    ports:
+      - "127.0.0.1:5433:5432"
+
+    volumes:
+      - phongtro_pgdata:/var/lib/postgresql/data
+
+    networks:
+      - bi_network
+
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U bi_admin -d phongtro_bi_demo
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  phongtro_pgdata:
+    name: phongtro_bi_pgdata
+
+networks:
+  bi_network:
+    name: phongtro_bi_network
+    driver: bridge
