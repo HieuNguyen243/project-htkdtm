@@ -7,13 +7,10 @@ import streamlit as st
 from config import PROVIDER_MODE_MOCK, PROVIDER_MODE_REAL, SUPPORTED_UI_VERSION
 from providers import DataProvider, MockDataProvider, ProviderError, RealDataProvider
 from state import DEFAULT_PREFERENCES, init_session_state, record_search_result
-from ui import (
-    render_compare_view,
-    render_detail_view,
-    render_map_view,
-    render_results_view,
-    render_search_form,
-)
+from ui.compare_view import render_compare_view
+from ui.map_view import render_map_view
+from ui.results_view import render_detail_view, render_results_view
+from ui.search_form import render_search_form
 
 
 st.set_page_config(
