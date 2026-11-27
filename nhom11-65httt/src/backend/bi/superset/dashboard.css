@@ -1,0 +1,8 @@
+.dashboard-content { background: #faf7fb; }
+.dashboard-component-chart-holder { background: #fff !important; border: 1px solid #eee5ef !important; border-radius: 14px !important; box-shadow: 0 4px 14px rgba(70,40,80,.07); }
+.dashboard-component-chart-holder .chart-header { padding: 10px 12px; border-bottom: 1px solid #f2edf3; }
+.dashboard-component-chart-holder .header-title { color: ACCENT_COLOR !important; font-weight: 650; }
+.dashboard-component-chart-holder .big-number { color: ACCENT_COLOR !important; }
+.dashboard-component-chart-holder .slice_container { padding: 6px; }
+.dashboard-component-chart-holder table th { background: #f6edf5 !important; color: #49384d; }
+.dashboard-component-chart-holder table tbody tr:hover { background: #faf2f8; }
