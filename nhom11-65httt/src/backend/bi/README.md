@@ -1,109 +1,116 @@
-# PHÂN HỆ CƠ SỞ DỮ LIỆU VÀ BUSINESS INTELLIGENCE
+# PHONG TRO BI – Hệ thống phân tích thị trường phòng trọ
 
-## 1. Thông tin dự án
+## 1. Giới thiệu
 
-- Đề tài: Hệ thống phân tích thị trường phòng trọ hỗ trợ sinh viên lựa chọn nơi ở.
-- Học phần: Hệ thống Kinh doanh thông minh.
-- Nhóm: 11 - 65HTTT.
-- Thành viên thực hiện: Trần Thị Minh Thư.
-- Vai trò: Thành viên 2 - Cơ sở dữ liệu và BI.
+Phân hệ CSDL và BI thuộc dự án Hệ thống phân tích thị trường phòng trọ hỗ trợ sinh viên lựa chọn nơi ở của nhóm 11 – 65HTTT.
 
-## 2. Mục tiêu
+Hệ thống sử dụng PostgreSQL để lưu trữ dữ liệu, Python để kiểm tra và nhập liệu, Apache Superset để trực quan hóa và phân tích dữ liệu.
 
-Xây dựng phân hệ cơ sở dữ liệu PostgreSQL và Apache Superset
-có khả năng hoạt động độc lập, tiếp nhận dữ liệu phòng trọ
-đã được chuẩn hóa, quản lý lịch sử dữ liệu và cung cấp
-các dashboard hỗ trợ phân tích thị trường phòng trọ.
+## 2. Công nghệ sử dụng
 
-## 3. Phạm vi nhiệm vụ
+- PostgreSQL 16
+- Apache Superset 6.1.0
+- Python 3.12
+- Docker và Docker Compose
+- SQL, Bash và CSS
 
-| Mã nhiệm vụ | Nội dung | Trạng thái |
-|---|---|---|
-| TV2-01 | Hợp đồng dữ liệu và bộ mẫu kiểm thử | Chưa hoàn thành |
-| TV2-02 | Thiết kế cơ sở dữ liệu | Chưa hoàn thành |
-| TV2-03 | Xây dựng công cụ nhập dữ liệu | Chưa hoàn thành |
-| TV2-04 | Analytics Views và định nghĩa KPI | Chưa hoàn thành |
-| TV2-05A | Dashboard giá chào thuê | Chưa hoàn thành |
-| TV2-05B | Dashboard khả năng chi trả | Chưa hoàn thành |
-| TV2-05C | Dashboard chất lượng dữ liệu | Chưa hoàn thành |
-| TV2-06 | Kiểm thử và đối soát SQL | Chưa hoàn thành |
-| TV2-07 | Môi trường, phân quyền và khôi phục | Chưa hoàn thành |
-| TV2-08 | Báo cáo và bàn giao sản phẩm | Chưa hoàn thành |
+## 3. Yêu cầu môi trường
 
-## 4. Kiến trúc hệ thống
+- Git
+- Docker Desktop đang hoạt động
+- Python 3.12
+- Git Bash đối với Windows
 
-Dữ liệu chuẩn từ thành viên 1
--> Python Importer
--> PostgreSQL
--> Analytics Views
--> Apache Superset
--> Dashboard BI
+## 4. Hướng dẫn cài đặt
 
-## 5. Công nghệ dự kiến
+### Bước 1. Clone repository
 
-- PostgreSQL 16: Lưu trữ và truy vấn dữ liệu.
-- Python: Kiểm tra và nhập dữ liệu CSV.
-- SQL: Xây dựng các view và tính toán KPI.
-- Apache Superset: Trực quan hóa dữ liệu.
-- Docker Compose: Triển khai môi trường.
-- Git/GitHub: Quản lý mã nguồn và tiến độ.
+```bash
+git clone -b nhom11-65httt https://github.com/HieuNguyen243/project-htkdtm.git
+cd project-htkdtm/nhom11-65httt/src/backend/bi
+```
 
-## 6. Cấu trúc thư mục
+### Bước 2. Cấu hình môi trường
 
-- importer/: Công cụ nhập và kiểm tra dữ liệu.
-- superset/: Cấu hình và bản xuất dashboard.
-- tests/: Mã nguồn kiểm thử.
-- tests/fixtures/: Dữ liệu giả lập phục vụ kiểm thử.
-- ../../database/: Script cơ sở dữ liệu và SQL.
-- ../../../docs/bi/: Tài liệu, báo cáo và minh chứng.
+```bash
+cp .env.example .env
+```
 
-## 7. Dashboard dự kiến
+Mở file `.env` và thiết lập các mật khẩu:
 
-### Dashboard 1 - Giá chào thuê
+- POSTGRES_PASSWORD: Mật khẩu quản trị PostgreSQL.
+- DB_PASSWORD: Mật khẩu tài khoản bi_importer.
+- BI_READER_PASSWORD: Mật khẩu tài khoản bi_reader.
+- SUPERSET_DB_PASSWORD: Mật khẩu database metadata.
+- SUPERSET_PASSWORD: Mật khẩu đăng nhập Superset.
+- SUPERSET_SECRET_KEY: Khóa bảo mật ngẫu nhiên.
 
-- Tổng số tin đăng hiện tại.
-- Số tin có giá hợp lệ.
-- Trung vị giá thuê.
-- Phân vị P25 và P75.
-- Giá thuê theo khu vực.
-- Phân bố giá thuê.
-- Giá thuê trên mét vuông.
+Tạo Secret Key bằng lệnh:
 
-### Dashboard 2 - Khả năng chi trả
+```bash
+py -3.12 -c "import secrets; print(secrets.token_hex(48))"
+```
 
-- Số tin có giá hợp lệ.
-- Số tin trong ngân sách.
-- Tỷ lệ tin trong ngân sách.
-- Độ phủ thông tin giá.
-- So sánh các mức ngân sách.
-- So sánh khả năng chi trả theo khu vực.
+Không đưa file `.env` lên GitHub.
 
-### Dashboard 3 - Chất lượng dữ liệu
+### Bước 3. Triển khai hệ thống
 
-- Tỷ lệ thiếu giá, diện tích, phí và vị trí.
-- Độ phủ dữ liệu theo nguồn và khu vực.
-- Độ mới của dữ liệu.
-- Chất lượng thông tin vị trí.
-- Thống kê tin trùng theo nhãn của TV1.
-- Thống kê kết quả nhập dữ liệu và lỗi.
+```bash
+bash setup_bi.sh
+```
 
-## 8. Nguyên tắc xử lý dữ liệu
+Trong lần cài đặt đầu tiên, chọn `y` khi được hỏi có tạo tài khoản admin hay không.
 
-- Không trộn dữ liệu thực với dữ liệu giả lập.
-- Không thay giá trị chưa biết bằng 0.
-- Không trộn giá/phòng và giá/người.
-- Không tự thực hiện lại quy trình làm sạch của TV1.
-- Không suy diễn tin biến mất là đã cho thuê.
-- Nhập lại cùng đợt không làm nhân đôi dữ liệu.
-- Cập nhật dữ liệu phải giữ được lịch sử.
-- Dashboard chỉ đọc dữ liệu đã công bố thành công.
-- Các KPI phải được kiểm chứng bằng SQL.
+Tạo tài khoản admin với mật khẩu đã cấu hình. Khi chạy lại trên môi trường đã có tài khoản, chọn `n`.
 
-## 9. Hướng dẫn cài đặt
+Nhập mật khẩu Superset và BI Reader nếu chương trình yêu cầu.
 
-Sẽ được bổ sung sau khi hoàn thiện môi trường
-PostgreSQL, Python Importer và Apache Superset.
+### Bước 4. Truy cập hệ thống
 
-## 10. Trạng thái dự án
+- Superset: http://localhost:8089
+- PostgreSQL: localhost:5433
+- Database: phongtro_bi_demo
 
-Đang triển khai phân hệ Cơ sở dữ liệu và BI.
+## 5. Danh sách Dashboard
+
+| Dashboard | Đường dẫn |
+|---|---|
+| Phân tích giá thuê | http://localhost:8089/superset/dashboard/phongtro-market/ |
+| Khả năng chi trả | http://localhost:8089/superset/dashboard/phongtro-affordability/ |
+| Chất lượng dữ liệu | http://localhost:8089/superset/dashboard/phongtro-quality/ |
+
+Hệ thống gồm 5 Dataset, 30 Chart và 3 Dashboard.
+
+## 6. Dữ liệu kiểm thử
+
+Hai bộ dữ liệu B001 và B002 là dữ liệu giả lập phục vụ kiểm thử chức năng.
+
+Dữ liệu giả lập không đại diện cho thị trường phòng trọ thực tế.
+
+## 7. Cập nhật Dashboard
+
+```bash
+python superset/build_dashboards.py --url http://localhost:8089 --user admin --bootstrap
+```
+
+## 8. Dừng hệ thống
+
+```bash
+docker compose --env-file .env -f docker-compose.yml -f docker-compose.superset.yml stop
+```
+
+Lệnh này dừng container nhưng giữ nguyên dữ liệu trong volume.
+
+## 9. Bảo mật
+
+- Không commit mật khẩu, Secret Key và file .env.
+- Không commit bản export Superset chưa được kiểm tra.
+- Tài khoản bi_reader chỉ được đọc dữ liệu phân tích.
+- Tài khoản bi_importer phục vụ nhập liệu.
+- Dashboard yêu cầu xác thực và phân quyền phù hợp.
+
+## 10. Trạng thái kiểm thử
+
+Script triển khai đã chạy thành công trên môi trường phát triển Windows.
+
+Cần tiếp tục kiểm thử cài đặt từ bản clone mới và tích hợp dữ liệu thực tế trước khi bàn giao chính thức.

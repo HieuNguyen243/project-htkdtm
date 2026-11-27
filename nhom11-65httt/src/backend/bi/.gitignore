@@ -11,3 +11,14 @@ __pycache__/
 .idea/
 *.dump
 *.backup
+# Local Superset exports
+superset/exports/
+
+# Local runtime files
+*.log
+__pycache__/
+*.pyc
+
+# Environment secrets
+.env
+.env.local

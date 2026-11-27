@@ -1,0 +1,9 @@
+*.sh text eol=lf
+*.py text eol=lf
+*.sql text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.css text eol=lf
+
+# Preserve exact CSV bytes for SHA256 validation
+*.csv -text
