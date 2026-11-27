@@ -117,3 +117,36 @@ def format_room_type(room_type_code: str) -> str:
 def format_price_basis_label(price_basis: str) -> str:
     """Map price_basis code to clear Vietnamese label."""
     return PRICE_BASIS_LABELS.get(price_basis, price_basis or "Chưa rõ")
+
+
+QUALITY_FLAG_LABELS: dict[str, str] = {
+    "missing_fees": "Thiếu thông tin phí (điện/nước/dịch vụ)",
+    "missing_coordinates": "Thiếu tọa độ bản đồ",
+    "price_per_person": "Giá niêm yết theo người (khác cơ sở theo phòng)",
+    "suspected_duplicate": "Nghi ngờ trùng lặp tin đăng từ nguồn thu thập",
+}
+
+
+def format_quality_flags(flags: list[str] | None) -> list[str]:
+    """Translate TV1 quality flag codes into clear Vietnamese warnings."""
+    if not flags:
+        return []
+    return [QUALITY_FLAG_LABELS.get(flag, f"Cờ dữ liệu: {flag}") for flag in flags]
+
+
+def count_missing_fields(listing: dict[str, Any]) -> int:
+    """Count key decision fields that are missing/unknown in a listing."""
+    missing = 0
+    if listing.get("area_m2") is None:
+        missing += 1
+    if listing.get("deposit_vnd") is None and listing.get("deposit_months") is None:
+        missing += 1
+    if not listing.get("fees"):
+        missing += 1
+    if listing.get("geo_confidence", "unknown") == "unknown":
+        missing += 1
+    amenities = listing.get("amenities") or {}
+    if any(amenities.get(code) is None for code in AMENITIES):
+        missing += 1
+    return missing
+
