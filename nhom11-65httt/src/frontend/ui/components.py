@@ -150,3 +150,20 @@ def count_missing_fields(listing: dict[str, Any]) -> int:
         missing += 1
     return missing
 
+
+def check_superset_health(base_url: str, timeout: float = 1.0) -> bool:
+    """Check whether Apache Superset is reachable on the specified base URL."""
+    if not is_safe_http_url(base_url):
+        return False
+    health_url = f"{base_url.rstrip('/')}/health"
+    try:
+        import urllib.request
+        req = urllib.request.Request(
+            health_url,
+            headers={"User-Agent": "Streamlit-TV4-HealthChecker"},
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            return response.status in (200, 302)
+    except Exception:
+        return False
+

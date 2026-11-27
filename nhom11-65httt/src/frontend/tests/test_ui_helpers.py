@@ -48,6 +48,17 @@ class UiHelperTests(unittest.TestCase):
         self.assertFalse(has_usable_coordinates({"latitude": 21.0, "longitude": 105.8, "geo_confidence": "unknown"}))
         self.assertTrue(has_usable_coordinates({"latitude": 21.0, "longitude": 105.8, "geo_confidence": "district_centroid"}))
 
+    def test_superset_dashboard_config_matches_tv2_slugs(self) -> None:
+        from config import DEFAULT_SUPERSET_URL, SUPERSET_DASHBOARDS
+        self.assertEqual(DEFAULT_SUPERSET_URL, "http://localhost:8089")
+        slugs = [d["slug"] for d in SUPERSET_DASHBOARDS]
+        self.assertEqual(slugs, ["phongtro-market", "phongtro-affordability", "phongtro-quality"])
+
+    def test_superset_health_check_rejects_malformed_url(self) -> None:
+        from ui.components import check_superset_health
+        self.assertFalse(check_superset_health("not-a-valid-url"))
+        self.assertFalse(check_superset_health("ftp://localhost:8089"))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -17,6 +17,33 @@ DEFAULT_REAL_MANIFEST_PATH = PROJECT_DATA_DIR / "manifest.json"
 PROVIDER_MODE_MOCK = "mock"
 PROVIDER_MODE_REAL = "real"
 
+# Apache Superset BI connection (TV2 defaults to localhost:8089)
+DEFAULT_SUPERSET_URL = "http://localhost:8089"
+
+SUPERSET_DASHBOARDS: tuple[dict[str, str], ...] = (
+    {
+        "slug": "phongtro-market",
+        "title": "Phân tích thị trường giá thuê",
+        "description": "Phân tích giá thuê trung vị, phân bố giá theo quận, đơn giá/m² và cơ cấu nguồn cung.",
+        "accent": "#b65b91",
+        "kpi_summary": "10 biểu đồ: Giá trung vị, P25/P75, giá/m² theo quận, phân bố khoảng giá và bảng chi tiết.",
+    },
+    {
+        "slug": "phongtro-affordability",
+        "title": "Phân tích khả năng chi trả",
+        "description": "Độ bao phủ ngân sách sinh viên (mức 2-3-4-5 triệu), tương quan tiền cọc và chi phí sinh hoạt.",
+        "accent": "#348477",
+        "kpi_summary": "10 biểu đồ: Tỷ lệ phù hợp ngân sách 3M, độ phủ giá, thiếu giá, so sánh các mức ngân sách.",
+    },
+    {
+        "slug": "phongtro-quality",
+        "title": "Phân tích chất lượng dữ liệu",
+        "description": "Theo dõi tỷ lệ thiếu giá, thiếu phí, thiếu tọa độ, cờ nghi trùng và chất lượng các đợt nhập batch.",
+        "accent": "#8062b4",
+        "kpi_summary": "10 biểu đồ: Tỷ lệ thiếu dữ liệu theo trường, chất lượng tọa độ, độ mới theo nguồn và nhật ký batch.",
+    },
+)
+
 DISTRICTS: tuple[str, ...] = ("Thanh Xuân", "Đống Đa", "Cầu Giấy")
 
 CAMPUSES: tuple[dict[str, object], ...] = (

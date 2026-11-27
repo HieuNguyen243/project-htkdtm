@@ -7,6 +7,7 @@ import streamlit as st
 from config import PROVIDER_MODE_MOCK, PROVIDER_MODE_REAL, SUPPORTED_UI_VERSION
 from providers import DataProvider, MockDataProvider, ProviderError, RealDataProvider
 from state import DEFAULT_PREFERENCES, init_session_state, record_search_result
+from ui.bi_view import render_bi_view
 from ui.compare_view import render_compare_view
 from ui.map_view import render_map_view
 from ui.results_view import render_detail_view, render_results_view
@@ -91,12 +92,13 @@ def main() -> None:
     last_response = st.session_state.get("last_response")
     compare_count = len(st.session_state.get("compare_ids", []))
 
-    tab_results, tab_detail, tab_compare, tab_map = st.tabs(
+    tab_results, tab_detail, tab_compare, tab_map, tab_bi = st.tabs(
         [
             "📋 Kết quả gợi ý",
             "📄 Chi tiết phòng",
             f"⚖️ So sánh ({compare_count}/4)",
             "🗺️ Bản đồ vị trí",
+            "📊 Dashboard BI (Superset)",
         ]
     )
 
@@ -111,6 +113,9 @@ def main() -> None:
 
     with tab_map:
         render_map_view(last_response)
+
+    with tab_bi:
+        render_bi_view(provider)
 
 
 if __name__ == "__main__":
