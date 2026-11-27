@@ -44,6 +44,14 @@
             "score_components": {"budget": 0.98, "location": 0.70, "amenities": 0.55},
             "reasons": ["Chi phí thấp nhất trong nhóm (2.200.000 đ/tháng)"],
             "warnings": ["Không có điều hòa, vệ sinh chung"]
+          },
+          {
+            "listing_id": "MOCK-006",
+            "rank": 4,
+            "score": 0.68,
+            "score_components": {"budget": 0.88, "location": 0.72, "amenities": 0.45},
+            "reasons": ["Giá thuê 2.900.000 đ/tháng ở khu vực Thanh Xuân"],
+            "warnings": ["Thiếu thông tin tiền cọc, diện tích và phí", "Cờ nghi ngờ trùng lặp từ nguồn thu thập"]
           }
         ]
       }
@@ -62,15 +70,23 @@
         "status": "ok",
         "version": "mock-tv3-v0.1",
         "dataset_version": "mock-v0.1",
-        "candidate_count": 2,
+        "candidate_count": 3,
         "warnings": [
           "Chế độ mẫu — dữ liệu/kết quả giả lập.",
           "Kết quả có chứa tin tính giá theo người (MOCK-004) và tin thiếu tọa độ (MOCK-003)."
         ],
         "items": [
           {
-            "listing_id": "MOCK-003",
+            "listing_id": "MOCK-007",
             "rank": 1,
+            "score": 0.92,
+            "score_components": {"budget": 0.89, "location": 0.96, "amenities": 0.91},
+            "reasons": ["Gần ĐH Giao thông Vận tải", "Đủ phí điện/nước/gửi xe và tọa độ chính xác"],
+            "warnings": []
+          },
+          {
+            "listing_id": "MOCK-003",
+            "rank": 2,
             "score": 0.86,
             "score_components": {"budget": 0.80, "location": 0.85, "amenities": 0.93},
             "reasons": ["Studio mini 28 m² đủ tiện nghi cơ bản"],
@@ -78,7 +94,7 @@
           },
           {
             "listing_id": "MOCK-004",
-            "rank": 2,
+            "rank": 3,
             "score": 0.77,
             "score_components": {"budget": 0.90, "location": 0.82, "amenities": 0.60},
             "reasons": ["Gần ĐH Giao thông Vận tải"],
