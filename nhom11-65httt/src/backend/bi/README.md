@@ -114,3 +114,13 @@ Lệnh này dừng container nhưng giữ nguyên dữ liệu trong volume.
 Script triển khai đã chạy thành công trên môi trường phát triển Windows.
 
 Cần tiếp tục kiểm thử cài đặt từ bản clone mới và tích hợp dữ liệu thực tế trước khi bàn giao chính thức.
+## Tài liệu phân hệ BI
+
+- [Hướng dẫn cài đặt](../../../docs/bi/installation.md)
+- [Báo cáo kiểm thử](../../../docs/bi/test_report.md)
+- [Tài liệu bàn giao](../../../docs/bi/handover.md)
+- [Hợp đồng dữ liệu](../../../docs/bi/data_contract.md)
+- [Danh mục KPI](../../../docs/bi/kpi_catalog.md)
+
+Phiên bản hiện tại sử dụng dữ liệu SYNTHETIC DEMO.
+Người dùng nhập mật khẩu Superset khi script yêu cầu.

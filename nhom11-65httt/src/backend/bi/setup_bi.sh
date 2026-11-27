@@ -208,22 +208,57 @@ echo "[7/9] Preparing Superset..."
 "${COMPOSE[@]}" run --rm -T \
     superset_bi superset db upgrade
 
-echo "Checking Superset admin account..."
-
-"${COMPOSE[@]}" run --rm \
-    superset_bi superset fab list-users
-
-echo "If the admin account does not exist,"
-echo "create it using superset fab create-admin."
-read -r -p "Create admin account now? [y/N]: " answer
-
-if [[ "$answer" =~ ^[Yy]$ ]]; then
-    "${COMPOSE[@]}" run --rm \
-        superset_bi superset fab create-admin
-fi
+# Initialize Superset roles
+echo "Initializing Superset roles..."
 
 "${COMPOSE[@]}" run --rm -T \
     superset_bi superset init
+
+# Automatically create admin account
+echo "Checking Superset admin account..."
+
+python - <<'PY'
+import json
+import subprocess
+from pathlib import Path
+from dotenv import dotenv_values
+
+config = dotenv_values(".env")
+
+username = config.get("SUPERSET_USER", "admin")
+password = config.get("SUPERSET_PASSWORD")
+
+if not password or password == "change_me":
+    raise SystemExit(
+        "Please configure SUPERSET_PASSWORD in .env"
+    )
+
+payload = json.dumps({
+    "username": username,
+    "password": password,
+})
+
+script = Path("superset/init_admin.py").read_text(
+    encoding="utf-8"
+)
+
+command = [
+    "docker", "compose",
+    "--env-file", ".env",
+    "-f", "docker-compose.yml",
+    "-f", "docker-compose.superset.yml",
+    "run", "--rm", "-T",
+    "superset_bi",
+    "/app/.venv/bin/python",
+    "-c", script,
+]
+
+subprocess.run(
+    command,
+    input=payload.encode("utf-8"),
+    check=True,
+)
+PY
 
 "${COMPOSE[@]}" up -d superset_bi
 
