@@ -1,0 +1,113 @@
+{
+  "dataset_version": "mock-v0.1",
+  "algorithm_version": "mock-tv3-v0.1",
+  "profiles": [
+    {
+      "profile_id": "tlu_under_4m",
+      "label": "Sinh viên ĐH Thủy lợi - Ngân sách <= 4.000.000 đ/tháng",
+      "preferences": {
+        "budget_vnd": 4000000,
+        "price_basis": "room",
+        "campus_id": "tlu_hanoi",
+        "district": "Đống Đa",
+        "occupants": 1
+      },
+      "result": {
+        "status": "ok",
+        "version": "mock-tv3-v0.1",
+        "dataset_version": "mock-v0.1",
+        "candidate_count": 3,
+        "warnings": [
+          "Chế độ mẫu — dữ liệu/kết quả giả lập, không phải tính toán từ mô-đun TV3 thật."
+        ],
+        "items": [
+          {
+            "listing_id": "MOCK-001",
+            "rank": 1,
+            "score": 0.91,
+            "score_components": {"budget": 0.95, "location": 0.92, "amenities": 0.86},
+            "reasons": ["Giá thuê 3.200.000 đ/tháng phù hợp ngân sách", "Gần ĐH Thủy lợi (cơ sở Tây Sơn)", "Có điều hòa và vệ sinh riêng"],
+            "warnings": ["Một số tiện ích (máy giặt, khu bếp) chưa được nêu rõ trong tin"]
+          },
+          {
+            "listing_id": "MOCK-002",
+            "rank": 2,
+            "score": 0.82,
+            "score_components": {"budget": 0.85, "location": 0.78, "amenities": 0.84},
+            "reasons": ["Có gác xép và ban công", "Diện tích 25 m² rộng rãi"],
+            "warnings": ["Thiếu thông tin tiền điện, nước — chưa thể tính tổng chi phí tháng", "Vị trí chỉ ở mức đại diện quận Thanh Xuân"]
+          },
+          {
+            "listing_id": "MOCK-005",
+            "rank": 3,
+            "score": 0.74,
+            "score_components": {"budget": 0.98, "location": 0.70, "amenities": 0.55},
+            "reasons": ["Chi phí thấp nhất trong nhóm (2.200.000 đ/tháng)"],
+            "warnings": ["Không có điều hòa, vệ sinh chung"]
+          }
+        ]
+      }
+    },
+    {
+      "profile_id": "utc_studio_or_shared",
+      "label": "Khu vực Cầu Giấy / Đống Đa - Bao gồm phòng thiếu tọa độ & giá theo người",
+      "preferences": {
+        "budget_vnd": 4500000,
+        "price_basis": "room",
+        "campus_id": "utc_hanoi",
+        "district": "Cầu Giấy",
+        "occupants": 2
+      },
+      "result": {
+        "status": "ok",
+        "version": "mock-tv3-v0.1",
+        "dataset_version": "mock-v0.1",
+        "candidate_count": 2,
+        "warnings": [
+          "Chế độ mẫu — dữ liệu/kết quả giả lập.",
+          "Kết quả có chứa tin tính giá theo người (MOCK-004) và tin thiếu tọa độ (MOCK-003)."
+        ],
+        "items": [
+          {
+            "listing_id": "MOCK-003",
+            "rank": 1,
+            "score": 0.86,
+            "score_components": {"budget": 0.80, "location": 0.85, "amenities": 0.93},
+            "reasons": ["Studio mini 28 m² đủ tiện nghi cơ bản"],
+            "warnings": ["Tin thiếu tọa độ bản đồ — không hiển thị ghim vị trí giả"]
+          },
+          {
+            "listing_id": "MOCK-004",
+            "rank": 2,
+            "score": 0.77,
+            "score_components": {"budget": 0.90, "location": 0.82, "amenities": 0.60},
+            "reasons": ["Gần ĐH Giao thông Vận tải"],
+            "warnings": ["Giá 1.500.000 đ/người/tháng (khác cơ sở giá theo phòng)"]
+          }
+        ]
+      }
+    },
+    {
+      "profile_id": "no_match_strict",
+      "label": "Kịch bản không có kết quả (ngân sách quá thấp + nhiều điều kiện bắt buộc)",
+      "preferences": {
+        "budget_vnd": 1200000,
+        "price_basis": "room",
+        "campus_id": "tlu_hanoi",
+        "district": "Đống Đa",
+        "occupants": 1
+      },
+      "result": {
+        "status": "no_match",
+        "version": "mock-tv3-v0.1",
+        "dataset_version": "mock-v0.1",
+        "candidate_count": 0,
+        "warnings": [
+          "Không tìm thấy phòng phù hợp với ngân sách <= 1.200.000 đ/tháng tại Đống Đa.",
+          "Đề xuất: Tăng ngân sách hoặc bỏ bớt điều kiện tiện ích bắt buộc."
+        ],
+        "items": []
+      }
+    }
+  ]
+}
