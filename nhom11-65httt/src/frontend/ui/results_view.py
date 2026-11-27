@@ -11,10 +11,12 @@ from state import add_to_compare, remove_from_compare
 from ui.components import (
     GEO_CONFIDENCE_LABELS,
     build_amenity_rows,
+    count_missing_fields,
     format_deposit,
     format_fees_breakdown,
     format_price_basis_label,
     format_price_with_basis,
+    format_quality_flags,
     format_room_type,
     is_safe_http_url,
 )
@@ -166,6 +168,15 @@ def render_detail_view(provider: DataProvider, response: RecommendationResponse 
 
     st.write(f"- **Địa chỉ:** {listing['address_clean']} ({listing['ward']}, {listing['district']})")
     st.write(f"- **Mức độ chính xác vị trí:** {GEO_CONFIDENCE_LABELS.get(listing.get('geo_confidence', 'unknown'), 'Chưa rõ')}")
+
+    q_flags = format_quality_flags(listing.get("quality_flags"))
+    missing_count = count_missing_fields(listing)
+    if q_flags or missing_count > 0:
+        st.markdown("#### Cờ chất lượng & Phần thông tin còn thiếu")
+        if missing_count > 0:
+            st.info(f"Tin này hiện còn thiếu dữ liệu ở **{missing_count}** nhóm thông tin quan trọng (không tự điền 0 hay 'miễn phí').")
+        for flag_msg in q_flags:
+            st.warning(f"🚩 {flag_msg}")
 
     st.markdown("#### Nguồn tin & Giới hạn hỗ trợ quyết định")
     st.write("*(Lưu ý: Hệ thống chỉ hỗ trợ ra quyết định; sinh viên cần xác minh thực tế trước khi đặt cọc hoặc ký hợp đồng.)*")
