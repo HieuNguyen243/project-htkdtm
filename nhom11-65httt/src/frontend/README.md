@@ -26,11 +26,12 @@ src/frontend/
 │   ├── search_form.py       # Biểu mẫu nhập nhu cầu (bắt buộc/mong muốn, ưu tiên, cảnh báo đổi điều kiện)
 │   ├── results_view.py      # Danh sách kết quả & trang chi tiết phòng
 │   ├── compare_view.py      # So sánh 2–4 phòng & cảnh báo khác cơ sở giá
-│   └── map_view.py          # Bản đồ vị trí có căn cứ (không vẽ điểm giả tại 0,0)
+│   ├── map_view.py          # Bản đồ vị trí có căn cứ (không vẽ điểm giả tại 0,0)
+│   └── bi_view.py           # Tích hợp 3 Dashboard Apache Superset BI (TV2) & nhúng Iframe
 └── tests/
     ├── test_providers.py    # Kiểm thử provider mẫu/thực & nối dữ liệu theo listing_id
     ├── test_state.py        # Kiểm thử session_state & giới hạn 2–4 phòng
-    └── test_ui_helpers.py   # Kiểm thử định dạng an toàn (phí thiếu, 3 trạng thái, URL, tọa độ)
+    └── test_ui_helpers.py   # Kiểm thử định dạng an toàn (phí thiếu, 3 trạng thái, URL, tọa độ, Superset config)
 ```
 
 ---
@@ -51,11 +52,22 @@ streamlit run app.py
 
 ---
 
-## 3. Chạy Bộ Kiểm Thử Đơn Vị
+## 3. Tích Hợp Apache Superset BI (TV2)
 
-Không cần cài đặt Streamlit hay CSDL để chạy kiểm thử logic giao diện, state và provider:
+Giao diện cung cấp tab **"📊 Dashboard BI (Superset)"** kết nối tới cụm Docker Superset của TV2 tại `http://localhost:8089`:
+- **Dashboard 1 (phongtro-market):** Phân tích thị trường giá thuê (P25/P50/P75, giá/m² theo quận).
+- **Dashboard 2 (phongtro-affordability):** Phân tích khả năng chi trả sinh viên (ngưỡng 2M-3M-4M-5M).
+- **Dashboard 3 (phongtro-quality):** Phân tích chất lượng dữ liệu (tỷ lệ thiếu giá, thiếu phí, cờ nghi trùng).
+- **Chế độ nhúng:** Hỗ trợ nhúng trực tiếp qua Iframe (`?standalone=true`) hoặc mở tab mới độc lập.
+- **Dự phòng ngoại tuyến:** Nếu Superset chưa khởi động, giao diện tự động hiển thị biểu đồ thống kê nội bộ từ dữ liệu phòng trọ hiện tại.
+
+---
+
+## 4. Chạy Bộ Kiểm Thử Đơn Vị
+
+Không cần cài đặt Streamlit hay CSDL để chạy kiểm thử logic giao diện, state, provider và cấu hình Superset:
 
 ```bash
 cd nhom11-65httt/src/frontend
-python -m unittest discover -s tests -v
+python scripts/run_checks.py
 ```
